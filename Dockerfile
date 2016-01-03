@@ -5,10 +5,11 @@ RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 # Install app dependencies
+RUN echo $WORKDIR
 ADD package.json /tmp/package.json
 RUN npm install -g npm && npm install -g express mocha
 RUN cd /tmp && npm install
-RUN mkdir -p /opt/app && cp -a /tmp/node_modules /opt/app/
+RUN cp -a /tmp/node_modules /usr/src/app
 
 # Bundle app source
 COPY . /usr/src/app
