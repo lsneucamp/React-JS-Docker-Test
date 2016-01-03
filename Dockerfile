@@ -6,7 +6,7 @@ WORKDIR /usr/src/app
 
 # Install app dependencies
 ADD package.json /tmp/package.json
-RUN cd /tmp && npm install
+RUN npm install -g npm && cd /tmp && npm install
 RUN mkdir -p /opt/app && cp -a /tmp/node_modules /opt/app/
 
 # Bundle app source
