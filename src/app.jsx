@@ -8,8 +8,7 @@ import routes from './config/routes';
 
 
 
-ReactDOM.render(
-    <Router>{routes}</Router>,
+ReactDOM.render(<Router>{routes}</Router>,
     document.getElementById('app')
 );
 
